@@ -1,8 +1,8 @@
-# Discord Bot (Python)
+## Discord Bot (Python)
 
 Bot simple para aprender Python y trabajar en equipo
 
-## Requisitos
+# Requisitos
 - Python 3.10+
 - Discord bot token
 
@@ -14,6 +14,10 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-## Ejecutar
+# Ejecutar
 '''bash
 python DiscordBot.py
+
+# NOTAS
+no guardar el archivo .env en la carpeta donde se hace el commit (si queremos pushear el commit que tiene el archivo .env nos va a tirar error)
+Mejor tener el .env guardado en otra carpeta de manera local, copiarla y pegarla en la carpeta del código para ejecutarlo y listo. Luego al finalizar el trabajo borrar el archivo .env de la carpeta del código y luego hacer el commit.
