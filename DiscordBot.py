@@ -22,5 +22,7 @@ async def on_message(message):
 
     if message.content == "!ping":
         await message.channel.send("pong 🏓")
+    if message.content == "!APOYO":
+        await message.channel.send("APOYOOOOOOOO")
 
 client.run(TOKEN)
