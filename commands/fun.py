@@ -35,6 +35,32 @@ class Poke(commands.Cog):#Comando !poke que devuelve la imagen del Pokemon solic
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send("Falta un argumento, boludazo")
 
+class Lol(commands.Cog):#Comando !lol que devuelve la imagen del Champ de League of Legends solicitado.
+    def __init__(self, bot):
+        self.bot = bot
+
+    @commands.command()
+    async def lol(self,ctx,arg: str):
+        try:
+            champ = arg.capitalize() + ".png"
+            print(champ)
+            result = "https://ddragon.leagueoflegends.com/cdn/12.6.1/img/champion/"+ champ
+            noCampeon = str(requests.get(result)) 
+            if noCampeon == "<Response [403]>": #Cuando el argumento no es un campeón la página tira ese response
+                await ctx.send("Campeon no encontrado")
+            else:
+                image_url = result
+                print(image_url)
+                await ctx.send(image_url)
+
+        except Exception as e:
+            print("Error: ", e)
+
+    async def cog_command_error(self, ctx, error):#Manda un mensaje cuando no se recibe un argumento obligatorio.
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send("Falta un argumento, boludazo")
+
 async def setup(bot):
+    await bot.add_cog(Lol(bot))
     await bot.add_cog(Poke(bot))
     await bot.add_cog(Apoyo(bot)) 
