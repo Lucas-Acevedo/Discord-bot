@@ -16,7 +16,8 @@ pip install -r requirements.txt
 
 # Ejecutar
 '''bash
-python DiscordBot.py
+(para evitar cualquier problema ejecutar después de inicializar el entorno virtual)
+python bot.py
 
 # NOTAS
 no guardar el archivo .env en la carpeta donde se hace el commit (si queremos pushear el commit que tiene el archivo .env nos va a tirar error)
