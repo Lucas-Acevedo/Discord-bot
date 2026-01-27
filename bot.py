@@ -16,6 +16,7 @@ async def on_ready():
 async def main():
     async with bot: 
         await bot.load_extension("commands.ping")
+        await bot.load_extension("commands.fun")
         await bot.start(TOKEN)
 
 asyncio.run(main())
