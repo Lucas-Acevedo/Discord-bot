@@ -1,4 +1,5 @@
 import discord
+import asyncio
 from config import TOKEN, intents
 from discord.ext import commands
 
@@ -12,6 +13,9 @@ async def on_ready():
     print(f"Bot conectado como {bot.user}")
     
 #Importar los comandos con Cog (todavía no sé que es)
-bot.load_extension("commands.ping")
+async def main():
+    async with bot: 
+        await bot.load_extension("commands.ping")
+        await bot.start(TOKEN)
 
-bot.run(TOKEN)
+asyncio.run(main())
