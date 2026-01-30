@@ -25,7 +25,6 @@ class Poke(commands.Cog):#Comando !poke que devuelve la imagen del Pokemon solic
                 await ctx.send("Pokemon no encontrado")
             else:
                 image_url = result.json()['sprites']['front_default']
-                print(image_url)
                 await ctx.send(image_url)
 
         except Exception as e:
@@ -50,7 +49,6 @@ class Lol(commands.Cog):#Comando !lol que devuelve la imagen del Champ de League
                 await ctx.send("Campeon no encontrado")
             else:
                 image_url = result
-                print(image_url)
                 await ctx.send(image_url)
 
         except Exception as e:
